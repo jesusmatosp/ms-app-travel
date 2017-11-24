@@ -31,7 +31,7 @@ public class FindTravelControllers {
 	@Autowired
 	private DestinationService destinationService;
 	
-	@CrossOrigin(origins = {"http://localhost:9000"})
+	@CrossOrigin(origins = {"http://localhost:9000", "http://app-unmsm-travel.cfapps.io", "https://app-unmsm-travel.cfapps.io"})
 	@PostMapping("/find-flights")
 	private ResponseFlightDTO getFlights(@RequestBody FlightRequestIn input){
 		FlightsServices service = flightFactory.findProvider(input.getCodeProvider());
@@ -53,7 +53,7 @@ public class FindTravelControllers {
 		return response;
 	}
 	
-	@CrossOrigin(origins = {"http://localhost:9000"})
+	@CrossOrigin(origins = {"http://localhost:9000", "http://app-unmsm-travel.cfapps.io", "https://app-unmsm-travel.cfapps.io"})
 	@GetMapping("/all-destination")
 	private ResponseDestinationDTO getAllDestination(){
 		ResponseDestinationDTO response = new ResponseDestinationDTO();
